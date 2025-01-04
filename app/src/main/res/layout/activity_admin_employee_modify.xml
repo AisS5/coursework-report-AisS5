@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ADMIN_employee_modify"
+    android:background="@drawable/background_image">
+
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="70dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_btn_24" />
+
+
+    <TextView
+        android:id="@+id/employee_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="EMPLOYEE"
+        android:textColor="@color/darkBlue"
+        android:textSize="50sp"
+        app:layout_constraintTop_toBottomOf="@id/back_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <EditText
+        android:id="@+id/employee_firstname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Firstname"
+        android:inputType="text"
+        android:textColor="@color/darkBlue"
+        android:textColorHint="@color/darkBlue"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/employee_ID"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <EditText
+        android:id="@+id/employee_lastname"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Lastname"
+        android:inputType="text"
+        android:textColor="@color/darkBlue"
+        android:textColorHint="@color/darkBlue"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/employee_firstname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <EditText
+        android:id="@+id/employee_email"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/darkBlue"
+        android:textColorHint="@color/darkBlue"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/employee_lastname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <EditText
+        android:id="@+id/employee_joiningDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Joining Date"
+        android:inputType="date"
+        android:textColor="@color/darkBlue"
+        android:textColorHint="@color/darkBlue"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/employee_email"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <EditText
+        android:id="@+id/employee_department"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Department"
+        android:inputType="text"
+        android:textColor="@color/darkBlue"
+        android:textColorHint="@color/darkBlue"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/employee_joiningDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <EditText
+        android:id="@+id/employee_salary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Salary"
+        android:inputType="numberDecimal"
+        android:textColor="@color/darkBlue"
+        android:textColorHint="@color/darkBlue"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/employee_department"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <EditText
+        android:id="@+id/employee_leaves"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Leaves"
+        android:inputType="number"
+        android:textColor="@color/darkBlue"
+        android:textColorHint="@color/darkBlue"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/employee_salary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/save_btn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="128dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/employee_leaves"
+        app:srcCompat="@drawable/save_btn_24" />
+
+
+    <ImageView
+        android:id="@+id/delete_btn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/employee_leaves"
+        app:srcCompat="@drawable/delete_btn_24" />
+
+    <TextView
+        android:id="@+id/save_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Save"
+        android:textColor="@color/darkBlue"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/save_btn"
+        app:layout_constraintStart_toStartOf="@id/save_btn"
+        app:layout_constraintEnd_toEndOf="@id/save_btn" />
+
+    <TextView
+        android:id="@+id/delete_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Delete"
+        android:textColor="@color/darkBlue"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/delete_btn"
+        app:layout_constraintStart_toStartOf="@id/delete_btn"
+        app:layout_constraintEnd_toEndOf="@id/delete_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

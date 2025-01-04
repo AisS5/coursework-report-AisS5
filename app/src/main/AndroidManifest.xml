@@ -13,6 +13,30 @@
         android:theme="@style/Theme.COMP2001AistenPhillips"
         tools:targetApi="31">
         <activity
+            android:name=".EMPLOYEE_my_info"
+            android:exported="true" />
+        <activity
+            android:name=".EMPLOYEE_holiday_request"
+            android:exported="true" />
+        <activity
+            android:name=".EMPLOYEE_dashboard"
+            android:exported="true" />
+        <activity
+            android:name=".ADMIN_holiday_requests"
+            android:exported="true" />
+        <activity
+            android:name=".ADMIN_employees"
+            android:exported="true" />
+        <activity
+            android:name=".ADMIN_employee_modify"
+            android:exported="true" />
+        <activity
+            android:name=".ADMIN_employee_add"
+            android:exported="true" />
+        <activity
+            android:name=".ADMIN_dashboard"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

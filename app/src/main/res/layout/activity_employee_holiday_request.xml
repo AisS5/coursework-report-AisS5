@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EMPLOYEE_holiday_request"
+    android:background="@drawable/background_image">
+
+
+    <TextView
+        android:id="@+id/employee_holiday_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="143dp"
+        android:layout_marginEnd="90dp"
+        android:text="HOLIDAY"
+        android:textColor="@color/darkBlue"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/start_date_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="66dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Start-Date"
+        app:hintTextColor="@color/darkBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employee_holiday_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/start_date_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:drawableEnd="@drawable/calendar_24"
+            android:focusable="false"
+            android:inputType="none"
+            android:textColor="@color/darkBlue"
+            android:textColorHint="@color/darkBlue" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/end_date_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="16dp"
+        android:hint="End-Date"
+        app:hintTextColor="@color/darkBlue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/start_date_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/end_date_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:drawableEnd="@drawable/calendar_24"
+            android:focusable="false"
+            android:inputType="none"
+            android:textColor="@color/darkBlue"
+            android:textColorHint="@color/darkBlue" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/cancel_btn"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="228dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/end_date_text"
+        app:srcCompat="@drawable/cancel_btn_24" />
+
+    <TextView
+        android:id="@+id/cancel_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Cancel"
+        android:textColor="@color/darkBlue"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/cancel_btn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cancel_btn"
+        app:layout_constraintTop_toBottomOf="@+id/cancel_btn" />
+
+    <ImageView
+        android:id="@+id/save_btn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="104dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/end_date_text"
+        app:srcCompat="@drawable/save_btn_24" />
+
+    <TextView
+        android:id="@+id/save_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Save"
+        android:textColor="@color/darkBlue"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/save_btn"
+        app:layout_constraintStart_toStartOf="@id/save_btn"
+        app:layout_constraintEnd_toEndOf="@id/save_btn" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

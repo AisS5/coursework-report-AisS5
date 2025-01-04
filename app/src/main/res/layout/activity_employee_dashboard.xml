@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ADMIN_dashboard"
+    android:background="@drawable/background_image">
+
+
+    <TextView
+        android:id="@+id/employee_dashboard_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="143dp"
+        android:layout_marginEnd="90dp"
+        android:text="DASHBOARD"
+        android:textColor="@color/darkBlue"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employee_dashboard_text">
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/dashboard_btn"
+            android:orientation="horizontal">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/EMPLOYEE_myInfo_icon"
+                        android:layout_width="78dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="36dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="36dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/baseline_info_24" />
+
+                    <TextView
+                        android:id="@+id/EMPLOYEE_myInfo_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="26dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="26dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="My Info"
+                        android:textColor="@color/lightblue"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/EMPLOYEE_myInfo_icon" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/dashboard_btn"
+            android:orientation="horizontal">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/EMPLOYEE_none_icon"
+                        android:layout_width="78dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="36dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="36dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/employee_add_24" />
+
+                    <TextView
+                        android:id="@+id/EMPLOYEE_none_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="26dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="26dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="Add"
+                        android:textColor="@color/lightblue"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/EMPLOYEE_none_icon" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="56dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/dashboard_btn"
+            android:orientation="horizontal">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/EMPLOYEE_holiday_icon"
+                        android:layout_width="78dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="36dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="36dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/holiday_request_24" />
+
+                    <TextView
+                        android:id="@+id/EMPLOYEE_holiday_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="26dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="26dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="Holiday"
+                        android:textColor="@color/lightblue"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/EMPLOYEE_holiday_icon" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/dashboard_btn"
+            android:orientation="horizontal">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/EMPLOYEE_notifications_icon"
+                        android:layout_width="78dp"
+                        android:layout_height="70dp"
+                        android:layout_marginStart="36dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="36dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/notifications_24" />
+
+                    <TextView
+                        android:id="@+id/EMPLOYEE_notifications_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="26dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="26dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="Notifications"
+                        android:textColor="@color/lightblue"
+                        android:textSize="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/EMPLOYEE_notifications_icon" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/logout_btn"
+        android:layout_width="172dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="119dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="@color/lightblue"
+        android:text="Logout"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
