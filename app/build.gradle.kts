@@ -29,9 +29,15 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    dataBinding{
+        enable = true;
+    }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
-dependencies {
+dependencies {  //Import necessary libraries for the app to work
 
     implementation(libs.appcompat)
     implementation(libs.material)
@@ -40,4 +46,12 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+
+    implementation("com.android.volley:volley:1.2.1")
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation ("org.mindrot:jbcrypt:0.4")
+    implementation("androidx.core:core-ktx:1.15.0")
+    implementation("com.google.android.material:material:1.12.0")
+
 }
