@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ADMIN_employee_modify"
+    tools:context=".EMPLOYEE_my_info"
     android:background="@drawable/background_image">
 
 
@@ -24,24 +24,27 @@
         android:id="@+id/my_info_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="107dp"
         android:text="MY INFO"
         android:textColor="@color/darkBlue"
         android:textSize="50sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/back_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/back_btn" />
+
 
     <EditText
         android:id="@+id/employee_id"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
-        android:hint="ENTER ID FIRST"
+        android:hint="ENTER ID"
         android:inputType="text"
         android:textColor="@color/darkBlue"
         android:textColorHint="@color/darkBlue"
@@ -49,14 +52,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="198dp" />
+        app:layout_constraintTop_toBottomOf="@+id/my_info_text" />
 
     <EditText
-        android:id="@+id/employee_firstname"
+        android:id="@+id/employee_firstname_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         android:hint="Firstname"
         android:inputType="text"
@@ -64,16 +67,15 @@
         android:textColorHint="@color/darkBlue"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/employee_id" />
 
     <EditText
-        android:id="@+id/employee_lastname"
+        android:id="@+id/employee_lastname_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         android:hint="Lastname"
         android:inputType="text"
@@ -81,74 +83,88 @@
         android:textColorHint="@color/darkBlue"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employee_firstname" />
+        app:layout_constraintTop_toBottomOf="@+id/employee_firstname_info" />
 
     <TextView
-        android:id="@+id/employee_email"
-        android:layout_width="wrap_content"
+        android:id="@+id/employee_email_info"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
         android:hint="Email"
         android:text=""
         android:textColorHint="@color/darkBlue"
-        android:textStyle="bold"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/employee_lastname"
-        app:layout_constraintTop_toBottomOf="@+id/employee_lastname" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employee_lastname_info" />
 
     <TextView
-        android:id="@+id/employee_joiningDate"
-        android:layout_width="wrap_content"
+        android:id="@+id/employee_joiningDate_info"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
         android:hint="Joining Date"
         android:text=""
         android:textColorHint="@color/darkBlue"
-        android:textStyle="bold"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/employee_email"
-        app:layout_constraintTop_toBottomOf="@+id/employee_email" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employee_email_info" />
 
     <TextView
-        android:id="@+id/employee_department"
-        android:layout_width="wrap_content"
+        android:id="@+id/employee_department_info"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
         android:hint="Department"
         android:text=""
         android:textColorHint="@color/darkBlue"
-        android:textStyle="bold"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/employee_joiningDate"
-        app:layout_constraintTop_toBottomOf="@+id/employee_joiningDate" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employee_joiningDate_info" />
 
     <TextView
-        android:id="@+id/employee_salary"
-        android:layout_width="wrap_content"
+        android:id="@+id/employee_salary_info"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
         android:hint="Salary"
         android:text=""
         android:textColorHint="@color/darkBlue"
-        android:textStyle="bold"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/employee_department"
-        app:layout_constraintTop_toBottomOf="@+id/employee_department" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employee_department_info" />
 
     <TextView
-        android:id="@+id/employee_leaves"
-        android:layout_width="wrap_content"
+        android:id="@+id/employee_leaves_info"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
         android:hint="Leaves"
         android:text=""
         android:textColorHint="@color/darkBlue"
-        android:textStyle="bold"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="@+id/employee_salary"
-        app:layout_constraintTop_toBottomOf="@+id/employee_salary" />
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employee_salary_info" />
 
     <ImageView
         android:id="@+id/save_btn"
@@ -167,11 +183,35 @@
         android:layout_marginTop="4dp"
         android:text="Save"
         android:textColor="@color/darkBlue"
+        android:textStyle="bold"
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/save_btn"
         app:layout_constraintStart_toStartOf="@id/save_btn"
         app:layout_constraintEnd_toEndOf="@id/save_btn" />
 
+
+    <ImageView
+        android:id="@+id/fetchInfo"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="88dp"
+        android:layout_marginEnd="36dp"
+        app:layout_constraintEnd_toStartOf="@+id/save_btn"
+        app:layout_constraintTop_toBottomOf="@+id/employee_leaves_info"
+        app:srcCompat="@drawable/dark_info_24" />
+
+    <TextView
+        android:id="@+id/fetchInfo_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Fetch"
+        android:textColor="@color/darkBlue"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/fetchInfo"
+        app:layout_constraintStart_toStartOf="@id/fetchInfo"
+        app:layout_constraintEnd_toEndOf="@id/fetchInfo" />
 
 
 
