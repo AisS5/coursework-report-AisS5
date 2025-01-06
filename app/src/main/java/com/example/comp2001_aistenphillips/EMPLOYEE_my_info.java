@@ -1,7 +1,9 @@
 package com.example.comp2001_aistenphillips;
 
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,11 +14,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+
 public class EMPLOYEE_my_info extends AppCompatActivity {
+
 
     private TextView employeeEmail, employeeDepartment, employeeSalary, employeeLeaves;
     private EditText employeeFirstname, employeeLastname, employeeid;
     private ImageView saveBtn, backBtn, fetchInfo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +34,9 @@ public class EMPLOYEE_my_info extends AppCompatActivity {
             return insets;
         });
 
+
         init();
+
 
         //BACK BUTTON
         backBtn.setOnClickListener(v->{
@@ -37,17 +44,25 @@ public class EMPLOYEE_my_info extends AppCompatActivity {
             startActivity(intent);
         });
 
+
         //FETCH BUTTON
         fetchInfo.setOnClickListener(v -> {
             String Employeeid = employeeid.getText().toString();            //Get the Employee ID
             try {
                 int EmployeeidInt = Integer.parseInt(Employeeid);           //Convert the Employee ID to an integer
+                Log.d("EmployeeID", "Employee ID: " + EmployeeidInt);
+
+
                 fetchEmployeebyId(EmployeeidInt);                           //Call the fetchEmployeebyId method
+
+
+
 
             } catch (NumberFormatException e) {
                 Toast.makeText(this, "Please enter a valid numeric Employee ID", Toast.LENGTH_SHORT).show();
             }
         });
+
 
         //SAVE BUTTON
         saveBtn.setOnClickListener(v ->{
@@ -59,7 +74,10 @@ public class EMPLOYEE_my_info extends AppCompatActivity {
             String EmployeeFirstname = employeeFirstname.getText().toString();      //Get the Employee information
             String EmployeeLastname = employeeLastname.getText().toString();
 
+
             int Employeeid = Integer.parseInt(EmployeeidStr);
+
+
 
 
             //CHECKS
@@ -67,7 +85,7 @@ public class EMPLOYEE_my_info extends AppCompatActivity {
                 Toast.makeText(this, "Firstname and Lastname cannot be empty", Toast.LENGTH_SHORT).show();
                 return;
             }
-                                                                                            //Create an Employee object with the new data and call the modifyEmployee method
+            //Create an Employee object with the new data and call the modifyEmployee method
             Employee updatedEmployee = new Employee();
             updatedEmployee.setId(Employeeid);
             updatedEmployee.setFirstname(EmployeeFirstname);
@@ -79,6 +97,7 @@ public class EMPLOYEE_my_info extends AppCompatActivity {
             modifyEmployee(updatedEmployee);
         });
     }
+
 
     //Holds all the necessary variables and assigns them to objects in the XML file
     private void init(){
@@ -94,6 +113,7 @@ public class EMPLOYEE_my_info extends AppCompatActivity {
         fetchInfo = findViewById(R.id.fetchInfo);
         saveBtn.setEnabled(false);                          //Disable the save button until the fetch button is pressed
     }
+
 
     //FETCH EMPLOYEE ID
     //This method fetches the employee information from the API using the Employee ID
@@ -116,6 +136,7 @@ public class EMPLOYEE_my_info extends AppCompatActivity {
             }
         });
     }
+
 
     //MODIFY EMPLOYEE
     //This method calls the modify method from the API_Service to update the employee information

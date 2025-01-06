@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EMPLOYEE_my_info"
+    tools:context=".ADMIN_employee_modify"
     android:background="@drawable/background_image">
 
 
@@ -24,141 +24,128 @@
         android:id="@+id/my_info_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="106dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="107dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:text="MY INFO"
         android:textColor="@color/darkBlue"
         android:textSize="50sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintTop_toBottomOf="@id/back_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/back_btn" />
-
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/employee_id"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="16dp"
-        android:hint="ENTER ID"
+        android:hint="ID"
         android:inputType="text"
+        android:textStyle="bold"
         android:textColor="@color/darkBlue"
         android:textColorHint="@color/darkBlue"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_info_text" />
 
     <EditText
-        android:id="@+id/employee_firstname_info"
+        android:id="@+id/employee_firstname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:hint="Firstname"
         android:inputType="text"
+        android:textStyle="bold"
         android:textColor="@color/darkBlue"
         android:textColorHint="@color/darkBlue"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/employee_id" />
 
     <EditText
-        android:id="@+id/employee_lastname_info"
+        android:id="@+id/employee_lastname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="16dp"
         android:hint="Lastname"
         android:inputType="text"
+        android:textStyle="bold"
         android:textColor="@color/darkBlue"
         android:textColorHint="@color/darkBlue"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/employee_firstname"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employee_firstname_info" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
 
     <TextView
-        android:id="@+id/employee_email_info"
-        android:layout_width="0dp"
+        android:id="@+id/employee_email"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
         android:hint="Email"
         android:text=""
+        android:textStyle="bold"
         android:textColorHint="@color/darkBlue"
         android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employee_lastname_info" />
+        app:layout_constraintStart_toStartOf="@+id/employee_lastname"
+        app:layout_constraintTop_toBottomOf="@+id/employee_lastname" />
+
 
     <TextView
-        android:id="@+id/employee_department_info"
-        android:layout_width="0dp"
+        android:id="@+id/employee_department"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
         android:hint="Department"
         android:text=""
+        android:textStyle="bold"
         android:textColorHint="@color/darkBlue"
         android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employee_email_info" />
+        app:layout_constraintStart_toStartOf="@+id/employee_email"
+        app:layout_constraintTop_toBottomOf="@+id/employee_email" />
 
     <TextView
-        android:id="@+id/employee_salary_info"
-        android:layout_width="0dp"
+        android:id="@+id/employee_salary"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
         android:hint="Salary"
         android:text=""
+        android:textStyle="bold"
         android:textColorHint="@color/darkBlue"
         android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employee_department_info" />
+        app:layout_constraintStart_toStartOf="@+id/employee_department"
+        app:layout_constraintTop_toBottomOf="@+id/employee_department" />
 
     <TextView
-        android:id="@+id/employee_leaves_info"
-        android:layout_width="0dp"
+        android:id="@+id/employee_leaves"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
         android:hint="Leaves"
         android:text=""
+        android:textStyle="bold"
         android:textColorHint="@color/darkBlue"
         android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employee_salary_info" />
+        app:layout_constraintStart_toStartOf="@+id/employee_salary"
+        app:layout_constraintTop_toBottomOf="@+id/employee_salary" />
 
     <ImageView
         android:id="@+id/save_btn"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="616dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/employee_leaves"
         app:srcCompat="@drawable/save_btn_24" />
 
     <TextView
@@ -168,7 +155,6 @@
         android:layout_marginTop="4dp"
         android:text="Save"
         android:textColor="@color/darkBlue"
-        android:textStyle="bold"
         android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/save_btn"
         app:layout_constraintStart_toStartOf="@id/save_btn"
@@ -179,10 +165,10 @@
         android:id="@+id/fetchInfo"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
         app:layout_constraintEnd_toStartOf="@+id/save_btn"
-        app:layout_constraintTop_toBottomOf="@+id/employee_leaves_info"
+        app:layout_constraintTop_toBottomOf="@+id/employee_leaves"
         app:srcCompat="@drawable/dark_info_24" />
 
     <TextView

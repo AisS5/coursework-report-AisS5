@@ -17,7 +17,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button loginBtn, button;
+    private Button loginBtn;
     private TextInputEditText usernameEditText, passwordEditText;
     private DatabaseHelper dbhelper;
     private LoginUsersHelper loginHelper;
@@ -34,18 +34,15 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+
         init();
                                                                         //Set up Helpers
         dbhelper = new DatabaseHelper(this);
         loginHelper = new LoginUsersHelper(dbhelper);
 
-
         loginBtn.setOnClickListener(v -> handleLogin());                //Call the handleLogin method when the login button is clicked
 
-        button.setOnClickListener(v->{
-            Intent intent = new Intent(MainActivity.this, ADMIN_dashboard.class);
-            startActivity(intent);
-        });
+
     }
 
     private void init(){                                               //Holds all the necessary variables and assigns them to objects in the XML file
@@ -53,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         usernameEditText = findViewById(R.id.username_edittext);
         passwordEditText = findViewById(R.id.password_edittext);
 
-        button = findViewById(R.id.button);
+
     }
     private void handleLogin(){
         String username = usernameEditText.getText().toString().trim();                     //Get the inputted username and password

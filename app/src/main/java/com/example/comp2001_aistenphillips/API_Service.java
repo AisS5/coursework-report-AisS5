@@ -1,5 +1,6 @@
 package com.example.comp2001_aistenphillips;
 
+
 import android.content.Context;
 import android.util.Log;
 import com.android.volley.Request;
@@ -15,27 +16,36 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 
+
+
 import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
 public class API_Service {              //This class will include methods to sending and receiving requests from the API
 
+
     private static final String BASE_URL = "http://10.224.41.11/comp2000";  //Create a static final to reference the API
-                                                                            //final - cannot be changed once it is assigned
+    //final - cannot be changed once it is assigned
     private static RequestQueue requestQueue;                               //RequestQueue requestQueue will be used to manage GET / POST / PUT / DELETE requests. (RequestQueue is from volley library)
     private static final Gson gson = new Gson();                            //Creates a gson. Used to deserialize or serialize JSON data. Serialize is used to convert Java into JSON and is used when sending data.
-                                                                            // deserialize is used to convert the JSON string back into java
-                                                                            // (Gson is from Gson library)
+    // deserialize is used to convert the JSON string back into java
+    // (Gson is from Gson library)
+
+
 
 
     private static void initQueue(Context context) {
         if (requestQueue == null) {                                                         //if requestQueue is null that means it has not been initialised and we can create a new RequestQueue
 
+
             requestQueue = Volley.newRequestQueue(context.getApplicationContext());         //context.getApplicationContext() - used getApp... to ensure that we are using application context, which is useful as it is recommended for creating a
-                                                                                            //newRequestQueue because it avoids memory leaks that could occur if activity context is used
+            //newRequestQueue because it avoids memory leaks that could occur if activity context is used
         }
     }
+
+
 
 
     //Method to Retrieve a list of all employees
@@ -45,13 +55,17 @@ public class API_Service {              //This class will include methods to sen
     }
     public static void getAllEmployees(Context context, final EmployeeResponseListener listener) {
 
+
         initQueue(context);                                                                              //Ensures that the queue is set up to handle network requests
+
 
         String url = BASE_URL + "/employees";                                                            //Modify the BASE_URL endpoint
 
+
         JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,        //JsonArrayRequest - Volley class that allows us to make GET  requests (Expecting a JSON array)
-                                                                                                         //Request.Method.GET - used to reference the GET function
-                                                                                                         //url - the url to retrieving employee data
+                //Request.Method.GET - used to reference the GET function
+                //url - the url to retrieving employee data
+
 
                 new Response.Listener<JSONArray>() {                                    //handles the success response from the server
                     @Override
@@ -59,17 +73,21 @@ public class API_Service {              //This class will include methods to sen
                         try {
                             Type listType = new TypeToken<List<Employee>>() {}.getType();               //Creates a new TypeToken because Gson requires a specific type to parse the JSON into a list of Employee objects
 
+
                             List<Employee> employees = gson.fromJson(response.toString(), listType);    //This uses Gson to deserialize the JSONArray into List Employee
-                                                                                                        //response.toString() - converts JSONArray into a string format that Gson can process
-                                                                                                        //listType - target type is a list of Employee objects
+                            //response.toString() - converts JSONArray into a string format that Gson can process
+                            //listType - target type is a list of Employee objects
+
 
                             listener.onSuccess(employees);                                              //If parse was successful, call the onSuccess method
+
 
                         } catch (Exception e) {                                                    //If an error occurs during parsing
                             listener.onError("Failed to retrieve employee data");      //call the onError method and pass in the error message
                         }
                     }
                 },
+
 
                 new Response.ErrorListener() {                                                  //Handles the error responses from the server
                     @Override
@@ -78,8 +96,12 @@ public class API_Service {              //This class will include methods to sen
                     }
                 });
 
+
         requestQueue.add(request);                                                              //Adds the request to requestQueue
     }
+
+
+
 
 
 
@@ -90,8 +112,10 @@ public class API_Service {              //This class will include methods to sen
     }
     public static void getEmployeeById(Context context, int employeeId, final EmployeeIdResponseListener listener){
 
+
         initQueue(context);
         String url = BASE_URL + "/employees/get/"+ employeeId;
+
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
             try {
@@ -99,9 +123,11 @@ public class API_Service {              //This class will include methods to sen
                 Log.d("API_Response", "getEmployeeByID: Request success: " + response.toString());
                 listener.onSuccess(employee);
 
+
             } catch (Exception e) {
                 listener.onError("Failed to parse employee data: " + e.getMessage());
             }
+
 
         },  error -> {
             listener.onError("Request failed: " + error.getMessage());
@@ -113,6 +139,10 @@ public class API_Service {              //This class will include methods to sen
 
 
 
+
+
+
+
     //METHOD to add an Employee to the API
     public interface EmployeeAddCallback {                                      //Used to handle callback events from ADD employee
         void onSuccess(String successMessage);                                  //Returns a success message
@@ -120,9 +150,11 @@ public class API_Service {              //This class will include methods to sen
     }
     public static void addEmployee(Context context, Employee employee, final EmployeeAddCallback callback){
 
+
         initQueue(context);
         String url =BASE_URL + "/employees/add";
         JSONObject employeeJSON = new JSONObject();                             //Create a new Employee to send via JSON
+
 
         try{                                                                            //Try input these fields
             employeeJSON.put("firstname", employee.getFirstname());
@@ -131,6 +163,7 @@ public class API_Service {              //This class will include methods to sen
             employeeJSON.put("department", employee.getDepartment());
             employeeJSON.put("salary", employee.getSalary());
             employeeJSON.put("joiningdate", employee.getJoiningDate());
+
 
         }
         catch (JSONException e) {
@@ -141,6 +174,7 @@ public class API_Service {              //This class will include methods to sen
                 String message = response.getString("message");
                 Log.d("API_Response", "addEmployee : Request success: " + response);
                 callback.onSuccess(message);
+
 
             }
             catch (JSONException e) {
@@ -156,6 +190,8 @@ public class API_Service {              //This class will include methods to sen
     }
 
 
+
+
     //METHOD to Delete Employee
     public interface EmployeeDeleteCallback {
         void onSuccess(String successMessage);
@@ -163,12 +199,15 @@ public class API_Service {              //This class will include methods to sen
     }
     public static void deleteEmployee(Context context, Employee employee, EmployeeDeleteCallback callback){
 
+
         initQueue(context);
         String url =BASE_URL + "/employees/delete/"  + employee.getId() ;
         JSONObject employeeJSON = new JSONObject();
 
+
         try{
             employeeJSON.put("id", employee.getId());
+
 
         }
         catch (JSONException e) {
@@ -181,6 +220,7 @@ public class API_Service {              //This class will include methods to sen
                 String message = response.getString("message");
                 callback.onSuccess(message);
 
+
             }
             catch (JSONException e) {
                 callback.onError("Message Failed: " + e.getMessage());
@@ -192,8 +232,12 @@ public class API_Service {              //This class will include methods to sen
                 });
 
 
+
+
         requestQueue.add(request);
     }
+
+
 
 
     //METHOD to modify employees
@@ -203,9 +247,11 @@ public class API_Service {              //This class will include methods to sen
     }
     public static void modifyEmployee(Context context, Employee employee, EmployeeModified modified){
 
+
         initQueue(context);
         String url =BASE_URL + "/employees/edit/"  + employee.getId();
         JSONObject employeeJSON = new JSONObject();
+
 
         try{
             employeeJSON.put("firstname", employee.getFirstname());
@@ -225,9 +271,11 @@ public class API_Service {              //This class will include methods to sen
                 String message = response.getString("message");
                 modified.onSuccess(message);
 
+
             } catch (JSONException e) {
                 modified.onError("Message Failed: " + e.getMessage());
             }
+
 
         },
                 error -> {
@@ -238,11 +286,14 @@ public class API_Service {              //This class will include methods to sen
     }
 
 
+
+
     public interface SalaryUpdateCallback {
         void onSuccess(String successMessage);
         void onError(String errorMessage);
     }
     public static void updateEmployeeSalary(Context context, int employeeId, double newSalary, SalaryUpdateCallback callback){
+
 
         initQueue(context);
         String url = BASE_URL + "/employees/edit/" + employeeId;
@@ -259,9 +310,11 @@ public class API_Service {              //This class will include methods to sen
                 String message = response.getString("message");
                 callback.onSuccess(message);
 
+
             } catch (JSONException e) {
                 callback.onError("Message Failed: " + e.getMessage());
             }
+
 
         },
                 error -> {
@@ -269,9 +322,14 @@ public class API_Service {              //This class will include methods to sen
                     Log.e("API_Response", "modifyEmployee : Request failed: " + error.getMessage());
                 });
 
+
         requestQueue.add(request);
 
+
     }
+
+
+
 
 
 
@@ -281,6 +339,7 @@ public class API_Service {              //This class will include methods to sen
         void onError(String errorMessage);
     }
     public static void healthCheck(Context context, final HealthCheckCallBack callback){
+
 
         initQueue(context);
         String url = BASE_URL + "/health";
