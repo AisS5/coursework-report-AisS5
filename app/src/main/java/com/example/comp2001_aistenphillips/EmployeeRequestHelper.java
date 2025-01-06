@@ -94,27 +94,7 @@ public class EmployeeRequestHelper {
     }
 
 
-    //MIGHT NOT USE (EMPLOYEE NOTIFCAITONS)
-    public List<HolidayRequest> getEmployeePendingRequests(String employeeEmail) {
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-        List<HolidayRequest> requests = new ArrayList<>();
 
-        Cursor cursor = db.query(REQUESTS_TABLE, null, EMPLOYEE_EMAIL_COL + " = ? AND " + STATUS_COL + " = ?", new String[]{employeeEmail, "pending"}, null, null, null);
-
-        if (cursor != null) {
-            while (cursor.moveToNext()) {
-                int id = cursor.getInt(cursor.getColumnIndex(ID_COL));
-                String email = cursor.getString(cursor.getColumnIndex(EMPLOYEE_EMAIL_COL));
-                String startDate = cursor.getString(cursor.getColumnIndex(START_DATE_COL));
-                String endDate = cursor.getString(cursor.getColumnIndex(END_DATE_COL));
-                String status = cursor.getString(cursor.getColumnIndex(STATUS_COL));
-                requests.add(new HolidayRequest(id, email, startDate, endDate, status));
-            }
-            cursor.close();
-        }
-
-        return requests;
-    }
 
 
 

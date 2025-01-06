@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private TextInputEditText usernameEditText, passwordEditText;
     private DatabaseHelper dbhelper;
     private LoginUsersHelper loginHelper;
-    private NotificationsHelper notificationsHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                                                                         //Set up Helpers
         dbhelper = new DatabaseHelper(this);
         loginHelper = new LoginUsersHelper(dbhelper);
-        notificationsHelper = new NotificationsHelper(dbhelper);
+
 
         loginBtn.setOnClickListener(v -> handleLogin());                //Call the handleLogin method when the login button is clicked
 

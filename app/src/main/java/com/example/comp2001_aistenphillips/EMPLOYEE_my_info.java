@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class EMPLOYEE_my_info extends AppCompatActivity {
 
-    private TextView employeeEmail, employeeJoiningDate, employeeDepartment, employeeSalary, employeeLeaves;
+    private TextView employeeEmail, employeeDepartment, employeeSalary, employeeLeaves;
     private EditText employeeFirstname, employeeLastname, employeeid;
     private ImageView saveBtn, backBtn, fetchInfo;
 
@@ -55,8 +55,12 @@ public class EMPLOYEE_my_info extends AppCompatActivity {
                 Toast.makeText(this, "Please provide your ID first", Toast.LENGTH_SHORT).show();
                 return;
             }
+            String EmployeeidStr = employeeid.getText().toString();
             String EmployeeFirstname = employeeFirstname.getText().toString();      //Get the Employee information
             String EmployeeLastname = employeeLastname.getText().toString();
+
+            int Employeeid = Integer.parseInt(EmployeeidStr);
+
 
             //CHECKS
             if (EmployeeFirstname.isEmpty() || EmployeeLastname.isEmpty()) {
@@ -65,12 +69,12 @@ public class EMPLOYEE_my_info extends AppCompatActivity {
             }
                                                                                             //Create an Employee object with the new data and call the modifyEmployee method
             Employee updatedEmployee = new Employee();
+            updatedEmployee.setId(Employeeid);
             updatedEmployee.setFirstname(EmployeeFirstname);
             updatedEmployee.setLastname(EmployeeLastname);
             updatedEmployee.setEmail(employeeEmail.getText().toString());
             updatedEmployee.setDepartment(employeeDepartment.getText().toString());
             updatedEmployee.setSalary(Float.parseFloat(employeeSalary.getText().toString()));
-            updatedEmployee.setJoiningDate(employeeJoiningDate.getText().toString());
             updatedEmployee.setLeaves(Integer.parseInt(employeeLeaves.getText().toString()));
             modifyEmployee(updatedEmployee);
         });
@@ -82,7 +86,6 @@ public class EMPLOYEE_my_info extends AppCompatActivity {
         employeeFirstname = findViewById(R.id.employee_firstname);
         employeeLastname = findViewById(R.id.employee_lastname);
         employeeEmail = findViewById(R.id.employee_email);
-        employeeJoiningDate = findViewById(R.id.employee_joiningDate);
         employeeDepartment = findViewById(R.id.employee_department);
         employeeSalary = findViewById(R.id.employee_salary);
         employeeLeaves = findViewById(R.id.employee_leaves);
@@ -101,7 +104,6 @@ public class EMPLOYEE_my_info extends AppCompatActivity {
                 employeeFirstname.setText(employee.getFirstname());
                 employeeLastname.setText(employee.getLastname());
                 employeeEmail.setText(employee.getEmail());
-                employeeJoiningDate.setText(employee.getJoiningDate());
                 employeeDepartment.setText(employee.getDepartment());
                 employeeSalary.setText(String.valueOf(employee.getSalary()));
                 employeeLeaves.setText(String.valueOf(employee.getLeaves()));

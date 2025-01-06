@@ -23,10 +23,9 @@ public class ADMIN_employees extends AppCompatActivity {
     private RecyclerView recyclerView;
     private SearchView searchView;
     private EmployeeList_Adapter employeeAdapter;
-    private EmployeeList_Adapter.RecyclerViewClickListener listener;
 
-    private DatabaseHelper dbHelper;
-    private HolidayAllowanceHelper allowanceHelper;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +40,8 @@ public class ADMIN_employees extends AppCompatActivity {
 
         init();
 
-        //HELPERS
-        dbHelper = new DatabaseHelper(ADMIN_employees.this);
-        allowanceHelper = new HolidayAllowanceHelper(dbHelper);
+
+
 
         //BACK BUTTON
         backButton.setOnClickListener(v->{
@@ -160,10 +158,6 @@ public class ADMIN_employees extends AppCompatActivity {
                 Toast.makeText(ADMIN_employees.this, "Error: " + errorMessage, Toast.LENGTH_SHORT).show();
             }
         });
-
-        //HolidayAllowanceHelper holidayAllowanceHelper = new HolidayAllowanceHelper(dbHelper);
-        //holidayAllowanceHelper.increaseYear();
-
 
     }
 }

@@ -103,22 +103,6 @@
         app:layout_constraintTop_toBottomOf="@+id/employee_lastname_info" />
 
     <TextView
-        android:id="@+id/employee_joiningDate_info"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Joining Date"
-        android:text=""
-        android:textColorHint="@color/darkBlue"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employee_email_info" />
-
-    <TextView
         android:id="@+id/employee_department_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -131,8 +115,9 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/employee_joiningDate_info" />
+        app:layout_constraintTop_toBottomOf="@+id/employee_email_info" />
 
     <TextView
         android:id="@+id/employee_salary_info"
@@ -194,8 +179,8 @@
         android:id="@+id/fetchInfo"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginTop="128dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toStartOf="@+id/save_btn"
         app:layout_constraintTop_toBottomOf="@+id/employee_leaves_info"
         app:srcCompat="@drawable/dark_info_24" />

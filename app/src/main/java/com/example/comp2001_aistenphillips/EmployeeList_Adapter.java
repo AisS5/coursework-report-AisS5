@@ -31,13 +31,6 @@ public class EmployeeList_Adapter  extends RecyclerView.Adapter<EmployeeList_Ada
         return fullemployeeList;
     }
 
-
-    public void setEmployeeList(List<Employee> employees){
-        this.fullemployeeList = new ArrayList<>(employees);
-        this.employeeList = new ArrayList<>(employees);
-        notifyDataSetChanged();
-    }
-
     //Method to reset the employee list
     public void resetEmployeeList() {
         this.employeeList = new ArrayList<>(this.fullemployeeList);     //Reset the employeeList using the fullEmployeeList

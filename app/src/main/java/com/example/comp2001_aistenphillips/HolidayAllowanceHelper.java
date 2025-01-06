@@ -77,31 +77,7 @@ public class HolidayAllowanceHelper {
 
 
 
-    //MIGHT NOT NEED
-    public void increaseYear() {
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
 
-        long currentDate = System.currentTimeMillis();                      // Gets the current time in milliseconds
-        String query = "SELECT * FROM " + ALLOWANCE_TABLE;                  // Query to select all rows from the ALLOWANCE_TABLE
-        Cursor cursor = db.rawQuery(query, null);
-
-        if (cursor.moveToFirst()) {
-            do {
-                                                                                                                // Retrieve the email, year, and last updated time for each row
-                String email = cursor.getString(cursor.getColumnIndexOrThrow(EMAIL_COL));
-                int year = cursor.getInt(cursor.getColumnIndexOrThrow(YEAR_COL));
-                long lastUpdatedTime = cursor.getLong(cursor.getColumnIndexOrThrow("last_updated_time"));
-
-                if (TimeUnit.MILLISECONDS.toDays(currentDate - lastUpdatedTime) >= 365) {                             // Check if one year has passed since the last update. If it has, update the allowance
-                    ContentValues values = new ContentValues();
-                    values.put(REMAINING_DAYS_COL, 30);
-                    values.put(YEAR_COL, year + 1);
-                    db.update(ALLOWANCE_TABLE, values, EMAIL_COL + " = ?", new String[]{email});
-                }
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
-    }
 
 
 }
