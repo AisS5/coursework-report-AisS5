@@ -1,0 +1,56 @@
+COMP2000 Report - CW2
+
+A mobile application developed as part of the COMP2000 coursework. This project 
+demonstrates key Android development skills, including API integration, UI design, 
+and SQL databases.
+
+API Details 
+The application interacts with a backend API for employee management
+To run the API you must be connected to the Plymouth Univerity network 
+
+Setup Instructions
+1. Clone the repository
+2. Open the project in Android Studio
+3. Ensure your development environment has the Android SDK for API Level 35 installed
+4. Sync the Gradle files and install dependencies
+5. Run the application on an emulator or physical device 
+
+Reccomended Setup 
+1.Android 10 or higher
+
+Run Instructions 
+The application doenst allow new users to create an account. Use this template admin and 
+employee accounts when first running: 
+
+Employee Credentials {
+  employee1@email.com
+  employeepassword
+}
+
+Admin Credentials {
+  admin1@email.com
+  adminpassword
+}
+
+
+Additional Resources Used
+1. Android Studio Built-in Resources
+    -Icons : The app uses drawable resources provided by Android Stduio's built-in
+             library
+    -Credits : Android Material Design Icons are provided under the Apache Licsense
+               2.0
+
+2. External Libraries
+    -Volley 1.2.1 
+    -Gson 2.10.1 
+    -AppCompat 1.6.1
+    -Core KTX 1.15.0
+    -Material Components 1.12.0
+    -jBCrypt 0.4
+
+2. Online Artwork 
+    -"Blue fluid background frame" by rawpixel.com
+    -Source: (https://www.freepik.com/free-vector/blue-fluid-background-frame_14547779.htm#fromView=keyword&page=2&position=27&uuid=7295856e-7418-48e4-a514-0db53534faa5)
+    -License: Free 
+    
+
